@@ -1,0 +1,22 @@
+In the pseudocode that follows, we assume
+that C is a set of n characters and that each character c ∈ C is an object
+with an attribute c.freq giving its frequency. The algorithm builds the tree T
+corresponding to the optimal code in a bottom-up manner. It begins with a set
+of |C| leaves and performs a sequence of |C| − 1 merging operations to create
+the final tree. The algorithm uses a min-priority queue Q, keyed on the freq
+attribute, to identify the two least-frequent objects to merge together. When
+we merge two objects, the result is a new object whose frequency is the sum of
+the frequencies of the two objects that were merged.
+
+
+Huffman(C)
+1: n := |C|;
+2: Q := C;
+3: for i := 1 to n − 1 do
+4: allocate a new node z
+5: z.lef t := x := Extract-Min(Q);
+6: z.right := y := Extract-Min(Q);
+7: z.freq := x.freq + y.freq;
+8: Insert(Q, z);
+9: end for
+10: return Extract-Min(Q); {return the root of the tree}
