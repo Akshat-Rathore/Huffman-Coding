@@ -1,0 +1,71 @@
+% Set the Page Layout
+\documentclass[12pt]{article}
+\usepackage[inner = 2.0cm, outer = 2.0cm, top = 2.0cm, bottom = 2.0cm]{geometry}
+
+% Package to write pseudo-codes
+\usepackage{algorithm}
+
+% Don't Remove the 'end' at the end of the algorithm
+\usepackage{algpseudocode}
+
+% Manually remove the 'end' for some sections
+\algtext*{EndIf}
+\algtext*{EndFor}
+
+% Define Left Justified Comments
+\algnewcommand{\LeftComment}[1]{\Statex \(\triangleright\) #1}
+
+% Remove the Numbering of the Algorithm
+\usepackage{caption}
+\DeclareCaptionLabelFormat{algnonumber}{Algorithm}
+\captionsetup[algorithm]{labelformat = algnonumber}
+
+% Define the command for a boldface instructions
+\newcommand{\Is}{\textbf{ is }}
+\newcommand{\To}{\textbf{ to }}
+\newcommand{\Downto}{\textbf{ downto }}
+\newcommand{\Or}{\textbf{ or }}
+\newcommand{\And}{\textbf{ and }}
+% Use them inside Math-Mode (Hence the space!)
+
+\begin{document}
+In the pseudo code that follows , we assume
+that C is a set of n characters and that each character c ∈ C is an object
+with an attribute c.freq giving its frequency. The algorithm builds the tree T
+corresponding to the optimal code in a bottom-up manner. It begins with a set
+of C leaves and performs a sequence of C − 1 merging operations to create
+the final tree. The algorithm uses a min-priority queue Q, keyed on the freq
+attribute, to identify the two least-frequent objects to merge together. When
+we merge two objects, the result is a new object whose frequency is the sum of
+the frequencies of the two objects that were merged.
+
+\begin{algorithm}
+
+  \caption{Huffman Coding}
+  
+  \begin{algorithmic}[1]
+    \Statex
+    
+    
+        \State $n: = |C|$
+       \State $Q: = C$
+        \For {$j \gets 1 \To n - 1$}
+        
+            \State$ allocate\hspace{.5em} a \hspace{.5em}new\hspace{.5em} node \hspace{.5em}z$
+                \State $z.left:=x:=Extract-Min(Q)$
+                \State $z.right:=:=Extract-Min(Q)$
+                \State$z.freq:=x.freq +y.freq$
+                \State$Insert(Q,Z)$
+           
+        \EndFor
+        \Statex
+        
+        \State \Return $Extract-Min(Q)$
+   
+    \Statex
+   
+  \end{algorithmic}
+  
+\end{algorithm}
+
+\end{document}
