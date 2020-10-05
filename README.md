@@ -11,6 +11,6 @@ The project is open for contributions and is hacktoberfest registered!
 
 The project focuses on providing code snippets with pseudocodes for Huffman Coding in different programming languages.
 
-If you want to contribute to this project, then have a look [here]().
+If you want to contribute to this project, then have a look [here](https://github.com/Akshat-Rathore/Huffman-Coding/blob/main/CONTRIBUTING.md).
 Make valid changes to make the project better!
 Also do refrain from spamming the repository to maintain the integrity of the open source community.
